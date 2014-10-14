@@ -1,0 +1,12 @@
+{
+	"name" : "one",
+	"description" : "Rabbit Tutorial One",
+	"version" : "0.0.1",
+	"dependencies" : {
+		"amqp" : "0.2.0"
+	},
+	"scripts": {
+		"send": "node send.js",
+		"receive": "node receive.js"
+	}
+}

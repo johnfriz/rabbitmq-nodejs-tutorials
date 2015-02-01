@@ -1,6 +1,6 @@
-# Tutorial One
+# Tutorial Two
 
-The first Rabbit MQ tutorial is a simple producer / consumer example - http://www.rabbitmq.com/tutorials/tutorial-one-python.html
+The second Rabbit MQ tutorial introduces the concept of work queues - http://www.rabbitmq.com/tutorials/tutorial-two-python.html
 
 # Running the example
 
@@ -32,4 +32,4 @@ To end the consumer process, press Ctrl+C
 
     sudo docker run -it --rm -v "$(pwd)":/usr/src/myapp -w /usr/src/myapp --link rabbitmq:rabbitmq node:0.10.31 npm run-script send
 
-The producer process will exit as soon as it has put a message on the queue.
+The producer process will exit as soon as it has put a message on the queue. Re run the producer multiple times to see the tasks being distributed in a round robin fashion between the two consumers

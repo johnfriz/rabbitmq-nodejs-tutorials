@@ -1,6 +1,6 @@
 {
-	"name" : "two",
-	"description" : "Rabbit Tutorial Two",
+	"name" : "three",
+	"description" : "Rabbit Tutorial Three",
 	"version" : "0.0.1",
 	"dependencies" : {
 		"amqp" : "0.2.0"

@@ -4,7 +4,7 @@ The second Rabbit MQ tutorial introduces the concept of work queues - http://www
 
 # Running the example
 
-## 1. Install the required dependancies
+## 1. Install the required dependencies
 
     npm install .
 
@@ -13,7 +13,7 @@ The second Rabbit MQ tutorial introduces the concept of work queues - http://www
 
   In a terminal window, run:
 
-    sudo docker run -it --rm -v "$(pwd)":/usr/src/myapp -w /usr/src/myapp --link rabbitmq:rabbitmq node:0.10.31 npm run-script receive
+    sudo docker run -it --rm -v "$(pwd)":/usr/src/myapp -w /usr/src/myapp --link rabbitmq:rabbitmq node:0.10.31 node receive.js
 
 To end the consumer process, press Ctrl+C
 
@@ -21,7 +21,7 @@ To end the consumer process, press Ctrl+C
 
   In a different terminal window, run:
 
-    sudo docker run -it --rm -v "$(pwd)":/usr/src/myapp -w /usr/src/myapp --link rabbitmq:rabbitmq node:0.10.31 npm run-script receive
+    sudo docker run -it --rm -v "$(pwd)":/usr/src/myapp -w /usr/src/myapp --link rabbitmq:rabbitmq node:0.10.31 node receive.js
 
 To end the consumer process, press Ctrl+C
 
@@ -30,6 +30,6 @@ To end the consumer process, press Ctrl+C
 
   In a third terminal window, run:
 
-    sudo docker run -it --rm -v "$(pwd)":/usr/src/myapp -w /usr/src/myapp --link rabbitmq:rabbitmq node:0.10.31 npm run-script send
+    sudo docker run -it --rm -v "$(pwd)":/usr/src/myapp -w /usr/src/myapp --link rabbitmq:rabbitmq node:0.10.31 node send.js
 
 The producer process will exit as soon as it has put a message on the queue. Re run the producer multiple times to see the tasks being distributed in a round robin fashion between the two consumers

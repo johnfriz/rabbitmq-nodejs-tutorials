@@ -24,11 +24,11 @@ connection.on('ready', function () {
       var msg = new Date() + (process.argv.slice(2).join(' ') || 'Hello World') + '';
       connection.publish('task_queue', msg);
 
-      console.log('Published messgae: "' + msg + '"');
+      console.log('Published message: "' + msg + '"');
       // Allow 1 second for the message publishing to complete
       setTimeout(function() {
 
-        console.log('Published message. Disconnecting...');
+        console.log('PDisconnecting...');
 
         connection.disconnect();
 

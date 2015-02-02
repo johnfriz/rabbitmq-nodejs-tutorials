@@ -4,7 +4,7 @@ The third Rabbit MQ tutorial is a simple pub / sub example which uses an exchang
 
 # Running the example
 
-## 1. Install the required dependancies
+## 1. Install the required dependencies
 
     npm install .
 

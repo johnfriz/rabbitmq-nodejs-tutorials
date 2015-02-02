@@ -2,7 +2,7 @@ var amqp = require('amqp');
 
 var routingKeys = process.argv.slice(2);
 if (routingKeys.length < 1) {
-  console.error('Please provide one or more routing keys (i.e. "log levels") to listen for messages');
+  console.error('Please provide one or more routing keys.');
   return process.exit(1);
 }
 
@@ -16,16 +16,16 @@ console.log('Connection Created. Waiting for connection be ready...');
 connection.on('ready', function () {
   console.log('Connection ready for use. Connecting to "logs" exchange...');
 
-  connection.exchange('direct_logs', {type: 'direct', autoDelete: false}, function(exchange){
+  connection.exchange('topic_logs', {type: 'topic', autoDelete: false}, function(exchange){
 
-    console.log('The "direct_logs" exchange is now ready for use.');
+    console.log('The "topic_logs" exchange is now ready for use.');
 
     connection.queue('', function(q){
       console.log('Connected to new queue. Waiting for queue to become ready');
 
       for(var i = 0; i < routingKeys.length; i++) {
         var routingKey = routingKeys[i];
-        q.bind('direct_logs', routingKey);
+        q.bind('topic_logs', routingKey);
       }
 
       q.on('queueBindOk', function() {

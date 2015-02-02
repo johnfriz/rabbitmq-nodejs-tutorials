@@ -18,11 +18,11 @@ connection.on('ready', function () {
     var message = 'hello world @ ' + new Date();
     exchange.publish('', message);
 
-    console.log('Published messgae: "' + message + '"');
+    console.log('Published message: "' + message + '"');
     // Allow 1 second for the message publishing to complete
     setTimeout(function() {
 
-      console.log('Published "hello world" message to exchange. Disconnecting...');
+      console.log('Disconnecting...');
 
       connection.disconnect();
 

@@ -16,12 +16,12 @@ console.log('Connection Created. Waiting for connection be ready...');
 connection.on('ready', function () {
   console.log('Connection ready for use. Connecting to "logs" exchange...');
 
-  connection.exchange('direct_logs', {type: 'direct', autoDelete: false}, function(exchange){
+  connection.exchange('topic_logs', {type: 'topic', autoDelete: false}, function(exchange){
     var routingKey = process.argv[2];
 
-    console.log('The "direct_logs" exchange is now ready for use. Publishing message with routing key "' + routingKey + '"...');
+    console.log('The "topic_logs" exchange is now ready for use. Publishing message with routing key "' + routingKey + '"...');
 
-    var message = routingKey + ' @ ' + new Date();
+    var message = routingKey + ' message @ ' + new Date();
     exchange.publish(routingKey, message);
 
     console.log('Published message: "' + message + '"');

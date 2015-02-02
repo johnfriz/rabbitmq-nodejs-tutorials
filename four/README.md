@@ -6,7 +6,7 @@ In this example, the producer will send messages with different routing keys to 
 
 # Running the example
 
-## 1. Install the required dependancies
+## 1. Install the required dependencies
 
     npm install .
 

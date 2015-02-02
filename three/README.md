@@ -1,6 +1,6 @@
 # Tutorial Three
 
-The third Rabbit MQ tutorial is a simple pub / sub example which uses an exchange and multiple queues - http://www.rabbitmq.com/tutorials/tutorial-one-python.html
+The third Rabbit MQ tutorial is a simple pub / sub example which uses an exchange and multiple queues - http://www.rabbitmq.com/tutorials/tutorial-three-python.html
 
 # Running the example
 
